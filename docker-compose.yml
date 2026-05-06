@@ -9,7 +9,7 @@ services:
         VITE_APP_WS_SERVER_URL: ${VITE_APP_WS_SERVER_URL}
         CACHE_INVALIDATOR: ${CACHE_INVALIDATOR}
     ports:
-      - "${FRONTEND_PORT:-8080}:80"
+      - "${FRONTEND_PORT:-24080}:80"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.excalidraw.rule=Host(`${EXCALIDRAW_DOMAIN}`)"
@@ -20,7 +20,7 @@ services:
   collab:
     image: excalidraw/excalidraw-room
     ports:
-      - "${COLLAB_PORT:-8081}:80"
+      - "${COLLAB_PORT:-24081}:80"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.collab.rule=Host(`${COLLAB_DOMAIN}`)"
